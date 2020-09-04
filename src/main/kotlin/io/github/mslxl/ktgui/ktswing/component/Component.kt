@@ -139,3 +139,10 @@ inline fun SwingPanelNode.editorPane(init: JEditorPane.() -> Unit) = _ktswing(JE
 inline fun SwingPanelNode.editorPane(initialPage: URL, init: JEditorPane.() -> Unit) = _ktswing(JEditorPane(initialPage), init)
 inline fun SwingPanelNode.editorPane(url: String, init: JEditorPane.() -> Unit) = _ktswing(JEditorPane(url), init)
 inline fun SwingPanelNode.editorPane(type: String, text: String, init: JEditorPane.() -> Unit) = _ktswing(JEditorPane(type, text), init)
+
+inline fun SwingPanelNode.hBox(init: Box.() -> Unit) = _ktswing(Box.createHorizontalBox(), init)
+inline fun SwingPanelNode.vBox(init: Box.() -> Unit) = _ktswing(Box.createVerticalBox(), init)
+fun SwingPanelNode.hGlue() = _ktswing(Box.createHorizontalGlue() as JComponent, {})
+fun SwingPanelNode.vGlue() = _ktswing(Box.createVerticalGlue() as JComponent, {})
+fun SwingPanelNode.hStrut(width: Int) = _ktswing(Box.createHorizontalStrut(width) as JComponent, {})
+fun SwingPanelNode.vStrut(height: Int) = _ktswing(Box.createVerticalStrut(height) as JComponent, {})
